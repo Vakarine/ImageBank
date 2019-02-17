@@ -9,6 +9,12 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     </head>
     <body>
+    <nav class="nav nav-pills">
+            <a class="nav-item nav-link <#if statusInfo??>${statusInfo}</#if>" href="/">Info</a>
+            <a class="nav-item nav-link <#if statusPosts??>${statusPosts}</#if>" href="/posts">Posts</a>
+            <a class="nav-item nav-link <#if statusTags??>${statusTags}</#if>" href="/posts/tags">Tags</a>
+            <a class="nav-item nav-link disabled" href="/users/profile" tabindex="-1" aria-disabled="true">Profile</a>
+    </nav>
     <div class="container mt-5">
         <#nested>
     </div>

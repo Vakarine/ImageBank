@@ -11,7 +11,10 @@ public class Image {
 
     private String title;
     private String imageName;
-    private String tag;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "tagId")
+    private Tag tag;
 
     public Integer getId() {
         return id;
@@ -37,11 +40,11 @@ public class Image {
         this.title = title;
     }
 
-    public String getTag() {
+    public Tag getTag() {
         return tag;
     }
 
-    public void setTag(String tag) {
+    public void setTag(Tag tag) {
         this.tag = tag;
     }
 }
